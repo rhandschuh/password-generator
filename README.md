@@ -4,3 +4,4 @@
 
 # https://rhandschuh.github.io/password-generator/index.html
 
+# https://rhandschuh.github.io/password-generator/screenshot.png
