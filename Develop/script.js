@@ -13,6 +13,7 @@ var confirmTheUpperCase;
 var confirmTheNumber;
 var confirmTheSpecialCharacters;
 var confirmLength;
+var theeLength;
 //asking how many characters for password
 function generatePassword() {
   let theLength = (prompt("How many characters for your password? Must be between 8 and 128 characters"))
@@ -25,17 +26,17 @@ function generatePassword() {
   alert(`Your password will have ${theLength} characters`);
   
   // Determine parameters of password 
-  var confirmTheUpperCase = confirm("confirm if you want numbers in password");
+  var confirmTheUpperCase = confirm("confirm if you want upper case in password");
   var confirmTheLowerCase = confirm("confirm if you want lower case in password");
   var confirmTheNumber = confirm("confirm if you want numbers in password");
   var confirmTheSpecialCharacter = confirm("confirm if you want special characters in your password");
   // a while loop for if answer is outside the parameters 
   while (confirmTheUpperCase === false && confirmTheLowerCase === false && confirmTheNumber === false && confirmTheSpecialCharacters === false) {
     alert("must chose at least one criteria");
-    var confirmTheNumber = confirm("confirm if you want numbers in password");
-    var confirmTheSpecialCharacter = confirm("confirm if you want special characters in password");
-    var confirmTheLowerCase = confirm("confirm if you want lower case in password");
-    var confirmTheUpperCase = confirm("confirm if you want upper case in password");
+    confirmTheNumber = confirm("confirm if you want numbers in password");
+    confirmTheSpecialCharacter = confirm("confirm if you want special characters in password");
+    confirmTheLowerCase = confirm("confirm if you want lower case in password");
+    confirmTheUpperCase = confirm("confirm if you want upper case in password");
   }
   
   
@@ -61,12 +62,8 @@ function generatePassword() {
   for (var i = 0; i < theLength; i++) {
     aPassword = aPassword + theCharacters[Math.floor(Math.random() * theCharacters.length)];
     console.log(aPassword)
-    return aPassword;
+    // return aPassword;
   }
-}
-
-function getInput(){
-  var userInput = prompt("Please input a number between 8 and 128");
 }
 
 
@@ -74,8 +71,8 @@ function getInput(){
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  console.log(password)
+  passwordText.textContent = password;
 
-  passwordText.value = password;
-  alert(`Your password will be ${writePassword}`);
 }
 
